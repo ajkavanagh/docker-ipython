@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
- 
+
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 
@@ -98,3 +98,8 @@ RUN pip install vincent
 
 #Add runit services
 ADD sv /etc/service 
+
+EXPOSE 22 8888
+
+#Cleanup
+RUN rm -rf /tmp/*
